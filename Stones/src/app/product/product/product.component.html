@@ -1,9 +1,11 @@
+<div class="border" [ngClass]="{'border-green': product.price <50}" [ngStyle]="styleConfig">
 <ng-content></ng-content>
 <ul>
     <li> Id: {{ product.id }}</li>
     <li id="name"> Name: {{ product.name }}</li>
-    <li> Preis: {{ product.price }}</li>
+    <li *ngIf="showPrice"> Preis: {{ product.price }}</li>
     <li> Gewicht: {{ product.weight }}</li>
 </ul>
+<button (click)="togglePrice()">Preis ein-/ausblenden</button>
 <button (click)="raisePrice()">Preis erhöhen</button>
-
+</div>
