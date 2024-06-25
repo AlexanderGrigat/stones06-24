@@ -26,6 +26,6 @@ describe('ProductComponent', () => {
 
     component.raisePrice();
 
-    expect(component.product.price).toBe(oldPrice+5);
+    expect(component.product.price).toBe(oldPrice + 5);
   });
 });
