@@ -7,6 +7,10 @@ import { Product } from './product/product';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  constructor(){
+    console.log("Das ist die App Component")
+  }
   title = 'stones';
   //parentProduct = new Product(12, "Granitstein Grabo", 120.50, 12);
   today = new Date();

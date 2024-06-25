@@ -1,7 +1,8 @@
-Heute ist {{today | date: 'fullDate' | uppercase}}
-
+<mat-toolbar>
+  <span> Stones </span>
+</mat-toolbar> ist {{today | date: 'fullDate' | uppercase}}
 @for (prod of products | slice:0:3; track prod.id;let isOdd = $odd) {
-  <div [ngClass]="{'grey-background': isOdd}">
+  <mat-card [ngClass]="{'grey-background': isOdd}">
     <stn-product  [product]="prod" (priceChange)="onPriceChanged($event)"/> 
-  </div>
+  </mat-card>
 }

@@ -10,7 +10,6 @@ export class NettoPipe implements PipeTransform {
       return price * (1 + tax/100);
     } else {
       return price / (1 + tax/100);
-
     }
   }
 

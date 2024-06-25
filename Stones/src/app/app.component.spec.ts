@@ -2,15 +2,18 @@ import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product/product.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]), 
+        MatToolbarModule,
       ],
       declarations: [
-        AppComponent, ProductComponent
+        AppComponent,
+        ProductComponent,
       ],
     }).compileComponents();
   });

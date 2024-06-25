@@ -11,8 +11,8 @@
     }
     <li> Gewicht: {{ product.weight }}</li>
 </ul>
-<button (click)="togglePrice()">Preis ein-/ausblenden</button><br/>
-<button (click)="raisePrice()">Preis erhöhen</button><br/>
+<button mat-raised-button (click)="togglePrice()">Preis ein-/ausblenden</button><br/>
+<button mat-raised-button (click)="raisePrice()">Preis erhöhen</button><br/>
 <input type="number" #price>
-      <button (click)="changePrice(price.valueAsNumber)"> Preis ändern</button> <br/>
+      <button mat-raised-button (click)="changePrice(price.valueAsNumber)"> Preis ändern</button> <br/>
 </div>
