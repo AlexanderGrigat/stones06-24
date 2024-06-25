@@ -23,4 +23,8 @@ export class ProductComponent {
   togglePrice() {
     this.showPrice = !this.showPrice;
   }
+
+  changePrice(price: number): void{
+    this.product.price = price;
+  }
 }

@@ -1,7 +1,7 @@
+Heute ist {{today | date: 'fullDate' | uppercase}}
 
-<div *ngFor="let prod of products; let isOdd = odd" [ngClass]="{'grey-background': isOdd}">
-  <stn-product  [product]="prod" (priceChange)="onPriceChanged($event)">
-    <input type="number" #price>
-    <button (click)="changePrice(price.valueAsNumber)"> Preis ändern</button> 
-  </stn-product>
-</div>
+@for (prod of products | slice:0:3; track prod.id;let isOdd = $odd) {
+  <div [ngClass]="{'grey-background': isOdd}">
+    <stn-product  [product]="prod" (priceChange)="onPriceChanged($event)"/> 
+  </div>
+}

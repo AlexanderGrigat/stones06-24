@@ -3,9 +3,16 @@
 <ul>
     <li> Id: {{ product.id }}</li>
     <li id="name"> Name: {{ product.name }}</li>
-    <li *ngIf="showPrice"> Preis: {{ product.price }}</li>
+    @if (showPrice) {
+    <li> Preis: {{ product.price | currency: '€' }}</li>
+    <li> Preis Netto: {{ product.price | netto | currency: '€' }}</li>
+    <li> Preis Netto 7%: {{ product.price | netto:7 | currency: '€' }}</li>
+    <li> Preis Brutto 7%: {{ product.price | netto:7: 'brutto' | currency: '€' }}</li>
+    }
     <li> Gewicht: {{ product.weight }}</li>
 </ul>
-<button (click)="togglePrice()">Preis ein-/ausblenden</button>
-<button (click)="raisePrice()">Preis erhöhen</button>
+<button (click)="togglePrice()">Preis ein-/ausblenden</button><br/>
+<button (click)="raisePrice()">Preis erhöhen</button><br/>
+<input type="number" #price>
+      <button (click)="changePrice(price.valueAsNumber)"> Preis ändern</button> <br/>
 </div>

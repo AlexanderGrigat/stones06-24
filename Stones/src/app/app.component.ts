@@ -9,7 +9,7 @@ import { Product } from './product/product';
 export class AppComponent {
   title = 'stones';
   //parentProduct = new Product(12, "Granitstein Grabo", 120.50, 12);
-
+  today = new Date();
   products: Product[] =[
     {
       "id": 0,
@@ -56,11 +56,6 @@ export class AppComponent {
   ]
   onPriceChanged(price: number) {
     alert('Neuer Preis: ' + price);
-  }
-  
-  changePrice(price: number): void{
-    //this.parentProduct.price = price;
-    //this.onPriceChanged(this.parentProduct.price);
   }
 }
 
