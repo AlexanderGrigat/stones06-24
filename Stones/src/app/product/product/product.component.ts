@@ -14,4 +14,9 @@ export class ProductComponent {
     this.product.price += 5;
     this.priceChange.emit(this.product.price);
   }
+
+  changePrice(price: number): void{
+    this.product.price = price;
+    this.priceChange.emit(this.product.price);
+  }
 }
