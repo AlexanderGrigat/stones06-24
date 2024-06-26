@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UtilsModule } from '../../utils/utils.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router, RouterModule, provideRouter } from '@angular/router';
+import { MockProductService, ProductService } from '../product.service';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -15,7 +16,7 @@ describe('ProductListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ProductListComponent, ProductComponent], 
       imports:[UtilsModule, RouterModule],
-      providers:[provideRouter([])]
+      providers:[{provide: ProductService, useClass: MockProductService},provideRouter([])]
     })
     .compileComponents();
 
@@ -26,5 +27,9 @@ describe('ProductListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  
+  it('should correctly read product list', () => {
+    expect(component.products[0].id).toBe(-1);
   });
 });
