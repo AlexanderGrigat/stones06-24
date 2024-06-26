@@ -4,6 +4,8 @@ import { ProductListComponent } from './product-list.component';
 import { ProductComponent } from '../product/product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UtilsModule } from '../../utils/utils.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router, RouterModule, provideRouter } from '@angular/router';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -11,7 +13,9 @@ describe('ProductListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProductListComponent, ProductComponent], imports:[ReactiveFormsModule, UtilsModule]
+      declarations: [ProductListComponent, ProductComponent], 
+      imports:[UtilsModule, RouterModule],
+      providers:[provideRouter([])]
     })
     .compileComponents();
 

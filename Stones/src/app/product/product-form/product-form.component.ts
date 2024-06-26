@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from '../product';
 import { CustomValidators } from '../../utils/validators/custom-validators';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'stn-product-form',
@@ -23,6 +24,16 @@ export class ProductFormComponent {
     price: [0, [Validators.required, CustomValidators.positiv]],
     weight: [0, Validators.required],
   });
+  id = -1;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(paramMap => {
+      const idParam = paramMap.get('id');
+      if (idParam) {
+        this.id = +idParam;
+      } 
+    })
+  }
 
   save() {
     const formValue = this.productForm.value;
@@ -33,7 +44,7 @@ export class ProductFormComponent {
         formValue.weight
       ) {
       const product = new Product(
-        -1,
+        this.id,
         formValue.name,
         formValue.price,
         formValue.weight
@@ -43,4 +54,14 @@ export class ProductFormComponent {
       this.productForm.reset();
     }
   }
+
+  hasSaved() {
+    const formValue = this.productForm.value;
+    if(!formValue.name && !formValue.price && formValue.weight) {
+      return true;
+    } else {
+      return confirm('Du hast ungespeicherte Daten, willst du wirklich weg?');
+    }
+  }
 }
+ 

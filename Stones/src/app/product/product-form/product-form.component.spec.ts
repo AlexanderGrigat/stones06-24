@@ -1,3 +1,4 @@
+import { RouterModule, provideRouter } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -14,7 +15,8 @@ describe('ProductFormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ProductFormComponent],
-      imports: [NoopAnimationsModule, ReactiveFormsModule,MatFormFieldModule, MatInputModule, MatButtonModule]
+      imports: [NoopAnimationsModule, RouterModule, ReactiveFormsModule,MatFormFieldModule, MatInputModule, MatButtonModule],
+      providers:[provideRouter([])]
     })
     .compileComponents();
 
