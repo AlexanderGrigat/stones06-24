@@ -57,7 +57,12 @@ export class AppComponent {
       "price": 71.62,
       "weight": 38
     }
-  ]
+  ];
+
+  onSaveProduct(newProduct: Product) {
+    this.products.unshift(newProduct);
+  }
+
   onPriceChanged(price: number) {
     alert('Neuer Preis: ' + price);
   }
