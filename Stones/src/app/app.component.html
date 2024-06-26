@@ -1,9 +1,4 @@
 <mat-toolbar>
-  <span> Stones </span>
+  <span> Stones </span> <a [routerLink]="['/products']">Produktliste</a><a [routerLink]="['/products/new']">Neues Produkt</a>
 </mat-toolbar> ist {{today | date: 'fullDate' | uppercase}}
-<stn-product-form (saveProduct)="onSaveProduct($event)"/>
-@for (prod of products; track prod.id;let isOdd = $odd) {
-  <mat-card [ngClass]="{'grey-background': isOdd}">
-    <stn-product  [product]="prod" (priceChange)="onPriceChanged($event)"/> 
-  </mat-card>
-}
+<router-outlet />

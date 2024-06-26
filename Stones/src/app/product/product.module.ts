@@ -9,11 +9,14 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductListComponent } from './product-list/product-list.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     ProductComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
   ],
   exports: [
     ProductComponent,

@@ -1,6 +1,11 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductFormComponent } from './product-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ProductFormComponent', () => {
   let component: ProductFormComponent;
@@ -8,7 +13,8 @@ describe('ProductFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProductFormComponent]
+      declarations: [ProductFormComponent],
+      imports: [NoopAnimationsModule, ReactiveFormsModule,MatFormFieldModule, MatInputModule, MatButtonModule]
     })
     .compileComponents();
 

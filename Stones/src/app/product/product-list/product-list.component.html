@@ -1,0 +1,5 @@
+@for (prod of products; track prod.id;let isOdd = $odd) {
+<mat-card [ngClass]="{'grey-background': isOdd}">
+    <stn-product  [product]="prod" /> 
+</mat-card>
+}
