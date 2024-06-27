@@ -15,8 +15,7 @@ describe('ProductFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProductFormComponent],
-      imports: [NoopAnimationsModule, RouterModule, ReactiveFormsModule,MatFormFieldModule, MatInputModule, MatButtonModule],
+      imports: [ProductFormComponent, NoopAnimationsModule, RouterModule, ReactiveFormsModule,MatFormFieldModule, MatInputModule, MatButtonModule],
       providers:[provideRouter([]), provideHttpClient()]
     })
     .compileComponents();

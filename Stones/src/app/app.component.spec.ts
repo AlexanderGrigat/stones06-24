@@ -10,8 +10,6 @@ describe('AppComponent', () => {
       imports: [
         RouterModule.forRoot([]), 
         MatToolbarModule,
-      ],
-      declarations: [
         AppComponent,
         ProductComponent,
       ],

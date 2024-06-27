@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductComponent } from './product.component';
 import { Product } from '../product';
 import { By } from '@angular/platform-browser';
-import { UtilsModule } from '../../utils/utils.module';
+import { NettoPipe } from '../../utils/netto.pipe';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -11,7 +11,7 @@ describe('ProductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProductComponent], imports: [UtilsModule]
+     imports: [ProductComponent, NettoPipe]
     })
     .compileComponents();
 

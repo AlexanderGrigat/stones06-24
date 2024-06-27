@@ -1,12 +1,17 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from '../product';
 import { CustomValidators } from '../../utils/validators/custom-validators';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
 import { map, pipe } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
+  standalone: true,
+  imports: [ReactiveFormsModule, MatButtonModule, MatFormFieldModule, MatInputModule],
   selector: 'stn-product-form',
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css'
