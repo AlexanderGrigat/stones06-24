@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('ProductFormComponent', () => {
   let component: ProductFormComponent;
@@ -16,7 +17,7 @@ describe('ProductFormComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ProductFormComponent],
       imports: [NoopAnimationsModule, RouterModule, ReactiveFormsModule,MatFormFieldModule, MatInputModule, MatButtonModule],
-      providers:[provideRouter([])]
+      providers:[provideRouter([]), provideHttpClient()]
     })
     .compileComponents();
 

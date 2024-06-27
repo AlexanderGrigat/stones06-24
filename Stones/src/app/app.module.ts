@@ -7,6 +7,7 @@ import { ProductModule } from './product/product.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     ProductModule,
     MatToolbarModule,
     MatCardModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

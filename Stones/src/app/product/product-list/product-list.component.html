@@ -1,4 +1,4 @@
-@for (prod of products; track prod.id;let isOdd = $odd) {
+@for (prod of products | async; track prod.id;let isOdd = $odd) {
 <mat-card [ngClass]="{'grey-background': isOdd}">
     <stn-product  [product]="prod" />
     <button [routerLink]="['/products/new', prod.id]">Produkt ändern</button> 

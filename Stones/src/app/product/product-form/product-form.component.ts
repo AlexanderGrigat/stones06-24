@@ -57,14 +57,13 @@ export class ProductFormComponent {
        formValue.price &&
         formValue.weight
       ) {
-      const product = new Product(
-        this.id,
-        formValue.name,
-        formValue.price,
-        formValue.weight
-      );
+      const product = {
+        name: formValue.name,
+        price: formValue.price,
+        weight: formValue.weight
+      };
 
-      this.productService.newProduct(product);
+      this.productService.newProduct(product).subscribe();
       this.productForm.reset();
     }
   }
